@@ -1,2 +1,2 @@
-# javascript_practice
+# javascript_promblems
 javascript_practice
