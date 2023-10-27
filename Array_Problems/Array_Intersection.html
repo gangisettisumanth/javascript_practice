@@ -16,9 +16,17 @@
                     return [];
                 }
 
-                const firstArray = arrays[0];
-                return firstArray.filter((element) => arrays.every((array) => array.includes(element)));
-            }
+                const result = [];
+
+                  
+                  for (const element of arrays[0]) {
+                    if (arrays.every(arr => arr.includes(element))) {
+                      result.push(element);
+                    }
+                  }
+                
+                  return result;
+        }
 
             
             const array1 = [1, 2, 3, 4, 5];
