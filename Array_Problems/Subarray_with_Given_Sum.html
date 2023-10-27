@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //19. **Subarray with Given Sum**: Given an array of numbers and a target sum, find a contiguous subarray that adds up to the target.
+
+        function findSubarrayWithSum(arr, targetSum) {
+                if (!Array.isArray(arr) || arr.length === 0) {
+                    return null;
+                }
+
+                let currentSum = arr[0];
+                let start = 0;
+
+                for (let end = 1; end <= arr.length; end++) {
+                    while (currentSum > targetSum && start < end - 1) {
+                        currentSum -= arr[start];
+                        start++;
+                    }
+
+                    if (currentSum === targetSum) {
+                        return arr.slice(start, end);
+                    }
+
+                    if (end < arr.length) {
+                        currentSum += arr[end];
+                    }
+                }
+
+                return null;
+            }
+
+            
+            const inputArray = [1, 2, 3, 4, 5, 6, 7, 8];
+            const targetSum = 12;
+            const subarray = findSubarrayWithSum(inputArray, targetSum);
+            console.log(subarray);
+            
+
+    </script>
+</body>
+</html>

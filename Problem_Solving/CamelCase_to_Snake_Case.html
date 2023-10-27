@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //11. **CamelCase to Snake Case**: Convert a string in CamelCase to snake_case. For example, "myVariableName" becomes "my_variable_name."
+
+        function camelCaseToSnakeCase(input) {
+                let snakeCaseString = '';
+                for (let i = 0; i < input.length; i++) {
+                    const char = input[i];
+
+                    if (i > 0 && char === char.toUpperCase()) {
+                        snakeCaseString += '_';
+                    }
+
+                    snakeCaseString += char.toLowerCase();
+                }
+
+                return snakeCaseString;
+            }
+
+            
+            const camelCaseString = "myVariableName";
+            const snakeCaseString = camelCaseToSnakeCase(camelCaseString);
+            console.log(snakeCaseString); 
+
+    </script>
+</body>
+</html>

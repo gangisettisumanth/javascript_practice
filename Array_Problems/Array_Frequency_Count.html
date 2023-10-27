@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //17. ** Array Frequency Count **: Write a function that counts the frequency of each element in an array and returns an object with the counts.
+
+        function countFrequency(arr) {
+                if (!Array.isArray(arr)) {
+                    return {};
+                }
+
+                const frequencyMap = {};
+
+                for (const element of arr) {
+                    if (frequencyMap[element]) {
+                        frequencyMap[element]++;
+                    } else {
+                        frequencyMap[element] = 1;
+                    }
+                }
+
+                return frequencyMap;
+            }
+
+            
+            const inputArray = [2, 3, 2, 5, 6, 5, 2, 5];
+            const frequencyCounts = countFrequency(inputArray);
+            console.log(frequencyCounts);
+            
+
+
+    </script>
+</body>
+</html>

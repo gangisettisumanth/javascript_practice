@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //15. **Anagram Checker**: Create a function that checks if two strings are anagrams of each other (contain the same characters in a different order).
+
+        function areAnagrams(str1, str2) {
+                
+                const cleanStr1 = str1.replace(/[\W_]/g, '').toLowerCase();
+                const cleanStr2 = str2.replace(/[\W_]/g, '').toLowerCase();
+
+                
+                const sortedStr1 = cleanStr1.split('').sort().join('');
+                const sortedStr2 = cleanStr2.split('').sort().join('');
+
+                
+                return sortedStr1 === sortedStr2;
+            }
+
+            
+            const string1 = "listen";
+            const string2 = "silent";
+
+            console.log(areAnagrams(string1, string2)); 
+
+    </script>
+</body>
+</html>

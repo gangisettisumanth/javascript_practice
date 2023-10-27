@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //5. ** Palindrome Checker **: Write a function that checks if a given string is a palindrome(reads the same forwards and backward).Ignore spaces and capitalization.
+
+        function isPalindrome(str) {
+        
+                str = str.replace(/\s/g, '').toLowerCase();
+
+                // Reverse the string
+                const reversedStr = str.split('').reverse().join('');
+
+                
+                return str === reversedStr;
+            }
+
+            // Example usage:
+            console.log(isPalindrome("racecar"));        
+            console.log(isPalindrome("A man a plan a canal Panama")); 
+            console.log(isPalindrome("hello"));          
+            console.log(isPalindrome("Was it a car or a cat I saw?")); 
+
+    </script>
+</body>
+</html>

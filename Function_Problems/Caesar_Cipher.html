@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //6. ** Caesar Cipher **: Implement a function that encrypts a message using the Caesar cipher.The function should take a message and a shift value as arguments and return the encrypted message.
+        function caesarCipher(message, shift) {
+                if (shift < 0) {
+                    shift = (shift % 26) + 26;
+                }
+
+                return message
+                    .split('')
+                    .map(char => {
+                        if (/[a-zA-Z]/.test(char)) {
+                            const isUpperCase = char === char.toUpperCase();
+                            const baseCharCode = isUpperCase ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
+                            const charCode = char.charCodeAt(0);
+                            const shiftedCharCode = (charCode - baseCharCode + shift) % 26 + baseCharCode;
+                            return String.fromCharCode(shiftedCharCode);
+                        } else {
+                            return char;
+                        }
+                    })
+                    .join('');
+            }
+
+            
+            console.log(caesarCipher("Hello, World!", 3)); 
+
+
+    </script>
+</body>
+</html>

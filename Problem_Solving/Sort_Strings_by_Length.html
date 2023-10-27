@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //14. **Sort Strings by Length**: Write a function that sorts an array of strings by their length, from shortest to longest.
+
+        function sortStringsByLength(strings) {
+                strings.sort((a, b) => a.length - b.length);
+                return strings;
+            }
+
+            
+            const stringArray = ["apple", "banana", "cherry", "date", "elderberry"];
+            const sortedStrings = sortStringsByLength(stringArray);
+            console.log(sortedStrings);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //16. ** Array Sum Pairs **: Given an array of numbers and a target sum, find all pairs of numbers in the array that add up to the target.
+
+        function findSumPairs(arr, targetSum) {
+                if (!Array.isArray(arr) || arr.length < 2) {
+                    return [];
+                }
+
+                const result = [];
+
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = i + 1; j < arr.length; j++) {
+                        if (arr[i] + arr[j] === targetSum) {
+                            result.push([arr[i], arr[j]]);
+                        }
+                    }
+                }
+
+                return result;
+            }
+
+            
+            const inputArray = [2, 7, 11, 15, 3, 8];
+            const targetSum = 10;
+            const pairs = findSumPairs(inputArray, targetSum);
+            console.log(pairs);
+
+
+    </script>
+</body>
+</html>

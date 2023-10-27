@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //14. **Word Frequency Counter**: Implement a function that counts the frequency of each word in a sentence and returns an object with the word counts.
+
+        function wordFrequencyCounter(sentence) {
+                const words = sentence.toLowerCase().split(' ');
+                const wordCounts = {};
+
+                for (let i = 0; i < words.length; i++) {
+                    const word = words[i];
+                    if (word in wordCounts) {
+                        wordCounts[word]++;
+                    } else {
+                        wordCounts[word] = 1;
+                    }
+                }
+
+                return wordCounts;
+            }
+
+            
+            const sentence = "This is a sample sentence. This is another sentence.";
+            const frequencyCounts = wordFrequencyCounter(sentence);
+            console.log(frequencyCounts);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //13. **Unique Elements**: Write a function that takes an array and returns a new array with only the unique elements from the original array.
+
+        function uniqueElements(arr) {
+                const uniqueArray = [];
+
+                for (let i = 0; i < arr.length; i++) {
+                    if (uniqueArray.indexOf(arr[i]) === -1) {
+                        uniqueArray.push(arr[i]);
+                    }
+                }
+
+                return uniqueArray;
+            }
+
+            
+            const originalArray = [1, 2, 2, 3, 4, 4, 5];
+            const uniqueArray = uniqueElements(originalArray);
+            console.log(uniqueArray); 
+
+    </script>
+</body>
+</html>

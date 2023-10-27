@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //3. **Longest Word**: Write a function that finds the longest word in an array of strings. If there are multiple words with the same maximum length, return the first one encountered.
+
+        function findLongestWord(arr) {
+                if (arr.length === 0) {
+                    return null; 
+                }
+
+                let longestWord = '';
+                for (let i = 0; i < arr.length; i++) {
+                    const currentWord = arr[i];
+
+                    if (currentWord.length > longestWord.length) {
+                        longestWord = currentWord;
+                    }
+                }
+
+                return longestWord;
+            }
+
+            
+            const words = ['apple', 'banana', 'cherry', 'date', 'elderberry'];
+            const longest = findLongestWord(words);
+            console.log(longest); 
+
+    </script>
+</body>
+</html>

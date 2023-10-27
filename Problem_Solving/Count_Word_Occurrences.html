@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //10. **Count Word Occurrences**: Create a function that takes a sentence and counts the occurrences of each word, then returns the words with their respective counts.
+
+        function countWordOccurrences(sentence) {
+                const words = sentence.toLowerCase().split(/\s+/).filter(word => word.length > 0);
+
+                if (words.length === 0) {
+                    return {}; 
+                }
+
+                const wordCounts = {};
+
+                words.forEach(word => {
+                    if (wordCounts[word]) {
+                        wordCounts[word]++;
+                    } else {
+                        wordCounts[word] = 1;
+                    }
+                });
+
+                return wordCounts;
+            }
+
+            
+            const inputSentence = "This is a test. This is only a test.";
+            const wordOccurrences = countWordOccurrences(inputSentence);
+            console.log(wordOccurrences);
+
+    </script>
+</body>
+</html>

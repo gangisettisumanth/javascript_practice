@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //9. **Rotate Array**: Write a function that rotates the elements of an array to the right by a given number of positions.
+
+        function rotateArrayRight(arr, positions) {
+                if (!Array.isArray(arr) || positions < 0) {
+                    return arr; 
+                }
+
+                const len = arr.length;
+                const shift = positions % len; 
+
+                const rotatedArray = [...arr.slice(len - shift), ...arr.slice(0, len - shift)];
+
+                return rotatedArray;
+            }
+
+            
+            const originalArray = [1, 2, 3, 4, 5];
+            const rotatedArray = rotateArrayRight(originalArray, 2);
+            console.log(rotatedArray);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //16. **String Palindrome Array**: Given an array of strings, filter out the palindromes and return them in a new array.
+
+        function isPalindrome(str) {
+                
+                const cleanStr = str.toLowerCase().replace(/[\W_]/g, '');
+                const reversedStr = cleanStr.split('').reverse().join('');
+                return cleanStr === reversedStr;
+            }
+
+            function filterPalindromes(strings) {
+                
+                return strings.filter(str => isPalindrome(str));
+            }
+
+            
+            const stringArray = ["racecar", "hello", "madam", "world", "level"];
+            const palindromes = filterPalindromes(stringArray);
+            console.log(palindromes);
+
+    </script>
+</body>
+</html>

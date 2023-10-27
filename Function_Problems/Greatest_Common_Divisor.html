@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //3. **Greatest Common Divisor**: Write a function that finds the greatest common divisor (GCD) of two numbers. The GCD is the largest positive integer that divides both numbers without a remainder.
+
+        function findGCD(a, b) {
+                if (b === 0) {
+                    return a;
+                } else {
+                    return findGCD(b, a % b);
+                }
+            }
+
+
+            console.log(findGCD(48, 18)); 
+            console.log(findGCD(17, 8));  
+            console.log(findGCD(14, 28)); 
+
+    </script>
+</body>
+</html>

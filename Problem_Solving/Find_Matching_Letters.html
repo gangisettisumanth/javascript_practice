@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //6. ** Find Matching Letters **: Create a function that takes two strings and returns the letters that are common in both strings, in alphabetical order.
+
+        function findMatchingLetters(str1, str2) {
+                
+                str1 = str1.toLowerCase();
+                str2 = str2.toLowerCase();
+
+                const commonLetters = [];
+
+                
+                for (let char of str1) {
+                    
+                    if (/^[a-z]$/.test(char) && str2.includes(char) && !commonLetters.includes(char)) {
+                        commonLetters.push(char);
+                    }
+                }
+
+                
+                commonLetters.sort();
+
+                return commonLetters.join('');
+            }
+
+                
+            const string1 = "Hello, World!";
+            const string2 = "Goodbye, Cruel World!";
+            const result = findMatchingLetters(string1, string2);
+            console.log(result); 
+
+    </script>
+</body>
+</html>

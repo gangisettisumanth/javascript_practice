@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 4. ** Count Occurrences **: Write a function that counts the number of times a specific element appears in an array.
+
+    function countAllOccurrences(arr) {
+        let countMap = {};
+
+        for (let i = 0; i < arr.length; i++) {
+            let element = arr[i];
+            if (countMap[element] === undefined) {
+                countMap[element] = 1;
+            } else {
+                countMap[element]++;
+            }
+        }
+
+
+        let result = "";
+        for (let key in countMap) {
+            result += `${key} is present ${countMap[key]} times\n`;
+        }
+
+        return result;
+    }
+
+    const myArray = [2, 2, 3, 3, 4, 4, 5, 4, 5, 6, 7, 8, 4, 8, 7, 8, 5, 9, 1, 1, 7, 9, 8, 4];
+    const counts = countAllOccurrences(myArray);
+    console.log(counts);
+
+
+    </script>
+</body>
+</html>

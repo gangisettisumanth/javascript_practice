@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //7. **Word Repeater**: Write a function that repeats each word in a sentence based on its length. For example, "Hello world" becomes "Hello Hello Hello world world world world."
+
+        function repeatWordsByLength(sentence) {
+                const words = sentence.split(' ');
+
+                
+                const repeatedWords = [];
+
+                
+                for (let word of words) {
+                    
+                    const repeatCount = word.length;
+
+                    
+                    for (let i = 0; i < repeatCount; i++) {
+                        repeatedWords.push(word);
+                    }
+                }
+
+                
+                return repeatedWords.join(' ');
+            }
+
+            
+            const inputSentence = "Hello world";
+            const result = repeatWordsByLength(inputSentence);
+            console.log(result); 
+
+    </script>
+</body>
+</html>

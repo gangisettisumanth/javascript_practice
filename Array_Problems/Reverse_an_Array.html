@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //5. ** Reverse an Array **: Write a function that reverses the elements in an array without using the built-in `reverse()` method.
+
+        function reverseArray(arr){
+
+            let newArray=[]
+
+            for(i=arr.length-1;i>=0;i--){
+                newArray.push(arr[i])
+            }
+
+            return newArray;
+
+        }
+        console.log(reverseArray([0,1,2,3,4,5,6,7,8,9]));
+    </script>
+</body>
+</html>

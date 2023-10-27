@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //6. **Flatten an Array**: Write a function that flattens a nested array (an array of arrays) into a single array.
+
+        function flattenArray(arr) {
+                let flattened = [];
+
+                for (let i = 0; i < arr.length; i++) {
+                    if (Array.isArray(arr[i])) {
+                        flattened = flattened.concat(flattenArray(arr[i]));
+                    } else {
+                        flattened.push(arr[i]);
+                    }
+                }
+
+                return flattened;
+            }
+
+            
+            const nestedArray = [1, [2, [3, 4], 5], 6, [7, 8]];
+            const flattenedArray = flattenArray(nestedArray);
+            console.log(flattenedArray);
+
+
+    </script>
+</body>
+</html>

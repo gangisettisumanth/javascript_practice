@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 10. **Two Sum Problem**: Given an array of numbers and a target value, write a function that returns an array of two numbers from the input array that add up to the target.
+
+
+        function twoSum(nums, target) {
+                const numIndices = {}; 
+
+                for (let i = 0; i < nums.length; i++) {
+                    const complement = target - nums[i];
+
+
+
+                    if (complement in numIndices) {
+                        return [numIndices[complement], i];
+                        
+                    }
+
+                    numIndices[nums[i]] = i;
+                }
+
+                return []; 
+            }
+
+            const inputArray = [2, 7, 11, 15];
+            const targetSum = 9;
+            const result = twoSum(inputArray, targetSum);
+            console.log(result); 
+
+
+    </script>
+</body>
+</html>

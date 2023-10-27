@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //14. **Array Difference**: Write a function that returns the elements that are unique to each array among multiple arrays.
+
+        function arrayDifference(arrays) {
+                if (!Array.isArray(arrays) || arrays.length < 2) {
+                    return [];
+                }
+
+                const uniqueElements = [];
+                const elementCounts = {};
+
+                for (const arr of arrays) {
+                    for (const element of arr) {
+                        if (elementCounts[element] === undefined) {
+                            elementCounts[element] = 1;
+                        } else {
+                            elementCounts[element]++;
+                        }
+                    }
+                }
+
+                for (const element in elementCounts) {
+                    if (elementCounts[element] === 1) {
+                        uniqueElements.push(parseInt(element));
+                    }
+                }
+
+                return uniqueElements;
+            }
+
+            
+            const array1 = [1, 2, 3, 4, 5];
+            const array2 = [3, 4, 5, 6, 7];
+            const array3 = [4, 5, 8, 9];
+
+            const uniqueToEach = arrayDifference([array1, array2, array3]);
+            console.log(uniqueToEach); 
+
+    </script>
+</body>
+</html>

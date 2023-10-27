@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*  10. **String Rotation:**
+    Write a function that checks if one string is a rotation of another. For example, "waterbottle" is a rotation of "erbottlewat."  */
+
+
+    function isStringRotation(str1, str2) {
+            if (str1.length !== str2.length) {
+                return false; 
+            }
+
+            const concatenatedStr1 = str1 + str1;
+            return concatenatedStr1.includes(str2);
+        }
+
+        
+        const string1 = "waterbottle";
+        const string2 = "erbottlewat";
+
+        const isRotation = isStringRotation(string1, string2);
+        console.log(isRotation); 
+
+    </script>
+</body>
+</html>

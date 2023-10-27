@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 3. **Anagram Detection:**
+        Write a function that checks if two words are anagrams of each other. Anagrams are words or phrases formed by rearranging the letters of another. */
+
+        function areAnagrams(word1, word2) {
+                
+                const cleanWord1 = word1.replace(/\s/g, '').toLowerCase();
+                const cleanWord2 = word2.replace(/\s/g, '').toLowerCase();
+
+                // Check if the sorted characters in both words are the same
+                return cleanWord1.split('').sort().join('') === cleanWord2.split('').sort().join('');
+            }
+
+            
+            const word1 = "listen";
+            const word2 = "silent";
+
+            const areAnagramsResult = areAnagrams(word1, word2);
+            console.log(areAnagramsResult); 
+
+    </script>
+</body>
+</html>

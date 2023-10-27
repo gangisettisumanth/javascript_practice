@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //18. **String Compression**: Implement a function that compresses a string by replacing consecutive repeated characters with the character and the count (e.g., "aaabbb" becomes "a3b3").
+
+        function compressString(str) {
+                let compressed = '';
+                let count = 1;
+
+                for (let i = 0; i < str.length; i++) {
+                    if (str[i] === str[i + 1]) {
+                        count++;
+                    } else {
+                        compressed += str[i] + (count > 1 ? count : '');
+                        count = 1;
+                    }
+                }
+
+                return compressed.length < str.length ? compressed : str;
+            }
+
+
+            console.log(compressString("aaabbb"));     
+            console.log(compressString("abcde"));      
+            console.log(compressString("aabccdd"));    
+
+    </script>
+</body>
+</html>

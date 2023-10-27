@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //1. **Reverse and Capitalize**: Write a function that takes an array of strings, reverses each string, and capitalizes the first letter of each word in the reversed string.
+
+
+        function reverseAndCapitalizeStrings(arr) {
+                
+                function reverseAndCapitalize(str) {
+                    
+                    const words = str.split(' ');
+
+                    
+                    const reversedAndCapitalizedWords = words.map(word => {
+                        
+                        const reversedWord = word.split('').reverse().join('');
+
+                        
+                        const capitalizedWord = reversedWord.charAt(0).toUpperCase() + reversedWord.slice(1).toLowerCase();
+
+                        return capitalizedWord;
+                    });
+
+                    
+                    return reversedAndCapitalizedWords.join(' ');
+                }
+
+
+                return arr.map(reverseAndCapitalize);
+            }
+
+            
+            const inputArray = ['hello world', 'example string'];
+            const result = reverseAndCapitalizeStrings(inputArray);
+            console.log(result); 
+
+
+
+    </script>
+</body>
+</html>

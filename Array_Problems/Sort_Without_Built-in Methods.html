@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //11. **Sort Without Built-in Methods**: Write a sorting function (e.g., bubble sort or quicksort) to sort an array of numbers without using JavaScript's built-in sorting methods.
+
+        function bubbleSort(arr) {
+                const n = arr.length;
+                let swapped;
+
+                for (let i = 0; i < n - 1; i++) {
+                    swapped = false;
+                    for (let j = 0; j < n - 1 - i; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            
+                            const temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                            swapped = true;
+                        }
+                    }
+
+                    if (!swapped) {
+                        
+                        break;
+                    }
+                }
+
+                return arr;
+            }
+
+
+            const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+            const sortedArray = bubbleSort(unsortedArray);
+            console.log(sortedArray); // Output: [11, 12, 22, 25, 34, 64, 90]
+
+    </script>
+</body>
+</html>

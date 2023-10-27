@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /*  6. **String Compression:**
+   Implement a function to perform basic string compression using the counts of repeated characters. For example, "aabcccccaaa" becomes "a2b1c5a3".   */
+
+
+        function compressString(str) {
+                if (str.length === 0) {
+                    return str; 
+                }
+
+                let compressed = '';
+                let currentChar = str[0];
+                let charCount = 1;
+
+                for (let i = 1; i < str.length; i++) {
+                    if (str[i] === currentChar) {
+                        charCount++;
+                    } else {
+                        compressed += currentChar + charCount;
+                        currentChar = str[i];
+                        charCount = 1;
+                    }
+                }
+
+                compressed += currentChar + charCount;
+
+                
+                return compressed.length < str.length ? compressed : str;
+            }
+
+            
+            const inputString = "aabcccccaaa";
+            const compressed = compressString(inputString);
+            console.log(compressed); 
+
+    </script>
+</body>
+</html>

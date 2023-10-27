@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //9. **Array to CSV**: Write a function that converts an array of objects into a CSV string. Each object represents a row, and the keys in the object represent columns.
+
+        function arrayToCSV(data) {
+                if (data.length === 0) {
+                    return ''; 
+                }
+
+                const headers = Object.keys(data[0]);
+                const csvRows = [];
+
+                
+                csvRows.push(headers.join(','));
+
+                
+                data.forEach((row) => {
+                    const values = headers.map((header) => {
+                        const cellValue = row[header];
+                        
+                        if (typeof cellValue === 'string' && cellValue.includes(',')) {
+                            return `"${cellValue}"`;
+                        }
+                        return cellValue;
+                    });
+                    csvRows.push(values.join(','));
+                });
+
+                return csvRows.join('\n');
+            }
+
+            
+            const data = [
+                { name: 'John', age: 30, city: 'New York' },
+                { name: 'Alice', age: 25, city: 'Los Angeles' },
+                { name: 'Bob', age: 35, city: 'Chicago' }
+            ];
+
+            const csv = arrayToCSV(data);
+            console.log(csv);
+
+    </script>
+</body>
+</html>

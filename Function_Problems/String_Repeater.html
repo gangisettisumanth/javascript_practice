@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //12. ** String Repeater **: Create a function that takes a string and a number as arguments and returns the string repeated that number of times.
+
+        function repeatString(str, num) {
+                if (num <= 0) {
+                    return '';
+                }
+
+                let result = '';
+                for (let i = 0; i < num; i++) {
+                    result += str;
+                }
+                return result;
+            }
+
+
+            const originalString = "Hello, ";
+            const repeatedString = repeatString(originalString, 3);
+            console.log(repeatedString); 
+
+    </script>
+</body>
+</html>

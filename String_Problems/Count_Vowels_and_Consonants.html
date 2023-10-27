@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 4. **Count Vowels and Consonants:**
+         Write a function that counts the number of vowels and consonants in a given string. */
+
+        function countVowelsAndConsonants(str) {
+                
+                const cleanStr = str.replace(/\s/g, '').toLowerCase();
+
+                
+                let vowelCount = 0;
+                let consonantCount = 0;
+
+                
+                const vowels = 'aeiou';
+
+                
+                for (let char of cleanStr) {
+                    if (vowels.indexOf(char) !== -1) {
+                        vowelCount++;
+                    } else if (char >= 'a' && char <= 'z') {
+                        consonantCount++;
+                    }
+                }
+
+                return { vowels: vowelCount, consonants: consonantCount };
+            }
+
+            
+            const inputString = "Hello, World!";
+            const counts = countVowelsAndConsonants(inputString);
+            console.log(counts);
+
+    </script>
+</body>
+</html>

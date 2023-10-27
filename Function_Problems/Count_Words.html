@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //11. **Count Words**: Implement a function that counts the number of words in a sentence.
+
+        function countWords(sentence) {
+                const words = sentence.split(' ');
+                
+                const nonEmptyWords = words.filter(word => word.length > 0);
+                return nonEmptyWords.length;
+            }
+
+            
+            const sentence = "This is a sample sentence with 7 words.";
+            console.log(countWords(sentence)); 
+
+
+
+    </script>
+</body>
+</html>
